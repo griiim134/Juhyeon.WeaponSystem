@@ -1,5 +1,5 @@
 {
-    "name": "com.juhyeon.weapon-system.test",
+    "name": "Juhyeon.WeaponSystem.Test",
     "rootNamespace": "",
     "references": [
         "GUID:fb10d4d3f4f3c0a4f9e7761932fb63a6",
