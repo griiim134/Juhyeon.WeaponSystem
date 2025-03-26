@@ -12,19 +12,35 @@ namespace Weapon
         Normal
     };
 
+    public enum ERangeType
+    {
+        Melee, // 근거리
+        Ranged // 원거리
+    };
+
     [CreateAssetMenu(fileName = "WeaponData", menuName = "Scriptable Objects/WeaponData")]
     public class WeaponData : ScriptableObject
     {
-        [SerializeField] private int weaponID;
-        [SerializeField] private string weaponName;
-        [SerializeField] private EWeaponType weaponType;
-        [SerializeField] private EWeaponProp weaponProp;
-        [SerializeField] private GameObject weaponPrefab;
+        [SerializeField] private int _weaponID;
+        [SerializeField] private string _weaponName;
+        [SerializeField] private EWeaponType _weaponType;
+        [SerializeField] private EWeaponProp _weaponProp;
+        [SerializeField] private ERangeType _rangeType;
+        [SerializeField] private float _range;
+        [SerializeField] private int _weaponATK;
+        [SerializeField] private int _weaponSPD;
+        [SerializeField] [Range(0, 1)] private float _weaponCTR;
+        [SerializeField] private GameObject _weaponPrefab;
 
-        public int GetWeaponID() => weaponID;
-        public string GetWeaponName() => weaponName;
-        public EWeaponType GetWeaponType() => weaponType;
-        public EWeaponProp GetWeaponProp() => weaponProp;
-        public GameObject GetWeaponPrefab() => weaponPrefab;
+        public int GetWeaponID() => _weaponID;
+        public string GetWeaponName() => _weaponName;
+        public EWeaponType GetWeaponType() => _weaponType;
+        public EWeaponProp GetWeaponProp() => _weaponProp;
+        public ERangeType GetRangeType() => _rangeType;
+        public float GetRange() => _range;
+        public int GetATK() => _weaponATK;
+        public int GetSPD() => _weaponSPD;
+        public float GetCTR() => _weaponCTR;
+        public GameObject GetWeaponPrefab() => _weaponPrefab;
     }
 }
