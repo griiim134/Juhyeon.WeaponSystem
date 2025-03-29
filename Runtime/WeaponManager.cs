@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Weapon;
 
-namespace Weapon
+namespace Juhyeon.Weapon.System
 {
     public class WeaponManager : MonoBehaviour
     {

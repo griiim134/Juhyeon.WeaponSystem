@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Weapon
+namespace Juhyeon.Weapon.System
 {
     [CreateAssetMenu(fileName = "WeaponDB", menuName = "Scriptable Objects/WeaponDB")]
     public class WeaponDB : ScriptableObject

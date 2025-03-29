@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Weapon
+namespace Juhyeon.Weapon.System
 {
     public enum ESlotIndex
     {
