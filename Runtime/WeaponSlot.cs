@@ -2,15 +2,15 @@ using UnityEngine;
 
 namespace Juhyeon.Weapon.System
 {
-    public enum ESlotIndex
+    public enum ESetIndex
     {
-        FirstSlot = 0, SecondSlot = 2
+        FirstSet = 0, SecondSet = 2
     };
 
     public class WeaponSlot : MonoBehaviour
     {
         private Weapon[] _slot = new Weapon[4];
-        private ESlotIndex _currentIndex = ESlotIndex.FirstSlot;
+        private ESetIndex _currentIndex = ESetIndex.FirstSet;
 
         public Weapon EquipMainWeapon(in Weapon weapon)
         {
@@ -52,7 +52,7 @@ namespace Juhyeon.Weapon.System
 
         public void SwapSlot()
         {
-            _currentIndex = _currentIndex == ESlotIndex.FirstSlot ? ESlotIndex.SecondSlot : ESlotIndex.FirstSlot;
+            _currentIndex = _currentIndex == ESetIndex.FirstSet ? ESetIndex.SecondSet : ESetIndex.FirstSet;
         }
 
         public Weapon GetCurrentMainWeapon()
@@ -67,7 +67,7 @@ namespace Juhyeon.Weapon.System
 
         public int GetCurrentSlotIndex()
         {
-            return _currentIndex == ESlotIndex.FirstSlot ? 1 : 2;
+            return _currentIndex == ESetIndex.FirstSet ? 1 : 2;
         }
     }
 }
