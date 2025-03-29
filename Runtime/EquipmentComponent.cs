@@ -50,3 +50,4 @@ namespace Juhyeon.Weapon.System
             return category == EWeaponCategory.Main ? (int)_currentIndex : (int)_currentIndex + 1;
         }
     }
+}

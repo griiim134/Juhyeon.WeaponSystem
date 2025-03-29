@@ -16,7 +16,7 @@ namespace Juhyeon.Weapon.System
         public Button generate;
         public Text text;
 
-        public WeaponSlot slot;
+        public EquipmentComponent slot;
         public Weapon weapon;
 
         private void Start()
@@ -25,45 +25,45 @@ namespace Juhyeon.Weapon.System
             subEquip.onClick.AddListener(OnEquipSub);
             mainUnequip.onClick.AddListener(OnUnequipMain);
             subUnequip.onClick.AddListener(OnUnequipSub);
-            swap.onClick.AddListener(slot.SwapSlot);
+            swap.onClick.AddListener(slot.SwapSet);
             generate.onClick.AddListener(OnGenerate);
         }
 
         private void Update()
         {
-            var main = slot.GetCurrentMainWeapon();
-            var sub = slot.GetCurrentSubWeapon();
+            var main = slot.HeldedWeapon(EWeaponCategory.Main);
+            var sub = slot.HeldedWeapon(EWeaponCategory.Sub);
             int mainId = 0, subId = 0;
 
             if (main)
                 mainId = main.ID;
             if (sub)
                 subId = sub.ID;
-            text.text = $"{slot.GetCurrentSlotIndex()}\nSlot : Main : {mainId}\nSub : {subId}";
+            text.text = $"{(slot.GetCurrentSet() == ESetIndex.FirstSet ? 1 : 2)}\nSlot : Main : {mainId}\nSub : {subId}";
         }
 
         public void OnEquipMain()
         {
             Debug.Log($"Equip main weapon {weapon.ID}");
-            slot.EquipMainWeapon(weapon);
+            slot.EquipWeapon(weapon, EWeaponCategory.Main);
         }
 
         public void OnEquipSub()
         {
             Debug.Log($"Equip sub weapon {weapon.ID}");
-            slot.EquipSubWeapon(weapon);
+            slot.EquipWeapon(weapon, EWeaponCategory.Sub);
         }
 
         public void OnUnequipMain()
         {
-            var weapon = slot.UnequipMainWeapon();
+            var weapon = slot.UnequipWeapon(EWeaponCategory.Main);
             if (weapon)
                 Debug.Log($"Unequip main weapon {weapon.ID}");
         }
 
         public void OnUnequipSub()
         {
-            var weapon = slot.UnequipSubWeapon();
+            var weapon = slot.UnequipWeapon(EWeaponCategory.Sub);
             if (weapon)
                 Debug.Log($"Unequip main weapon {weapon.ID}");
         }
