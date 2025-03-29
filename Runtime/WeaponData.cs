@@ -33,8 +33,8 @@ namespace Weapon
         public string Name => _name;
         public EWeaponCategory Category => _category;
         public EWeaponProp Prop => _prop;
-        public ERangeType GetRangeType() => _rangeType;
-        public float GetRange() => _range;
+        public ERangeType RangeType => _rangeType;
+        public float Range => _range;
         public GameObject Prefab => _prefab;
     }
 }

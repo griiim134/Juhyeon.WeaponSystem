@@ -12,15 +12,12 @@ namespace Weapon
             _data = data;
         }
 
-        public int GetWeaponID() => _data.GetWeaponID();
-        public string GetWeaponName() => _data.GetWeaponName();
-        public EWeaponType GetWeaponType() => _data.GetWeaponType();
-        public EWeaponProp GetWeaponProp() => _data.GetWeaponProp();
-        public ERangeType GetRangeType() => _data.GetRangeType();
-        public float GetRange() => _data.GetRange();
-        public int GetATK() => _data.GetATK();
-        public int GetSPD() => _data.GetSPD();
-        public float GetCTR() => _data.GetCTR();
-        public GameObject GetPrefab() => _data.GetWeaponPrefab();
+        public int ID => _data.ID;
+        public string Name => _data.Name;
+        public EWeaponCategory Category => _data.Category;
+        public EWeaponProp Prop => _data.Prop;
+        public ERangeType RangeType => _data.RangeType;
+        public float Range => _data.Range;
+        public GameObject Prefab => _data.Prefab;
     }
 }
