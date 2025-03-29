@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Weapon
 {
-    public enum EWeaponType
+    public enum EWeaponCategory
     {
         Both, Main, Sub
     };
@@ -21,26 +21,20 @@ namespace Weapon
     [CreateAssetMenu(fileName = "WeaponData", menuName = "Scriptable Objects/WeaponData")]
     public class WeaponData : ScriptableObject
     {
-        [SerializeField] private int _weaponID;
-        [SerializeField] private string _weaponName;
-        [SerializeField] private EWeaponType _weaponType;
-        [SerializeField] private EWeaponProp _weaponProp;
+        [SerializeField] private int _id;
+        [SerializeField] private string _name;
+        [SerializeField] private EWeaponCategory _category;
+        [SerializeField] private EWeaponProp _prop;
         [SerializeField] private ERangeType _rangeType;
         [SerializeField] private float _range;
-        [SerializeField] private int _weaponATK;
-        [SerializeField] private int _weaponSPD;
-        [SerializeField] [Range(0, 1)] private float _weaponCTR;
-        [SerializeField] private GameObject _weaponPrefab;
+        [SerializeField] private GameObject _prefab;
 
-        public int GetWeaponID() => _weaponID;
-        public string GetWeaponName() => _weaponName;
-        public EWeaponType GetWeaponType() => _weaponType;
-        public EWeaponProp GetWeaponProp() => _weaponProp;
+        public int ID => _id;
+        public string Name => _name;
+        public EWeaponCategory Category => _category;
+        public EWeaponProp Prop => _prop;
         public ERangeType GetRangeType() => _rangeType;
         public float GetRange() => _range;
-        public int GetATK() => _weaponATK;
-        public int GetSPD() => _weaponSPD;
-        public float GetCTR() => _weaponCTR;
-        public GameObject GetWeaponPrefab() => _weaponPrefab;
+        public GameObject Prefab => _prefab;
     }
 }
