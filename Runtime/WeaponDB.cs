@@ -14,12 +14,12 @@ namespace Weapon
             _db = new Dictionary<int, WeaponData>();
             foreach(var weapon in weapons)
             {
-                if (_db.ContainsKey(weapon.GetWeaponID()))
+                if (_db.ContainsKey(weapon.ID))
                 {
-                    Debug.Log($"ÀÌ¹Ì Á¸ÀçÇÏ´Â IDÀÔ´Ï´Ù : {weapon.GetWeaponID()} - {weapon.GetWeaponName()}");
+                    Debug.Log($"ì´ë¯¸ ì¡´ì¬í•˜ëŠ” IDì…ë‹ˆë‹¤ : {weapon.ID} - {weapon.Name}");
                     return;
                 }
-                _db.Add(weapon.GetWeaponID(), weapon);
+                _db.Add(weapon.ID, weapon);
             }
         }
 
@@ -29,7 +29,7 @@ namespace Weapon
             {
                 return weapon;
             }
-            Debug.Log($"¹«±â {id} ´Â µî·ÏµÇ¾î ÀÖÁö ¾Ê½À´Ï´Ù.");
+            Debug.Log($"ë¬´ê¸° {id} ëŠ” ë“±ë¡ë˜ì–´ ìˆì§€ ì•ŠìŠµë‹ˆë‹¤.");
             return null;
         }
     }

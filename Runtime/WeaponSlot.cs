@@ -16,7 +16,7 @@ namespace Weapon
         {
             Weapon heldWeapon = GetCurrentMainWeapon();
 
-            if (weapon.GetWeaponType() == EWeaponType.Main || weapon.GetWeaponType() == EWeaponType.Both)
+            if (weapon.Category == EWeaponCategory.Main || weapon.Category == EWeaponCategory.Both)
             {
                 _slot[(int)_currentIndex] = weapon;
             }
@@ -27,7 +27,7 @@ namespace Weapon
         {
             Weapon heldWeapon = GetCurrentSubWeapon();
 
-            if (weapon.GetWeaponType() == EWeaponType.Sub || weapon.GetWeaponType() == EWeaponType.Both)
+            if (weapon.Category == EWeaponCategory.Sub || weapon.Category == EWeaponCategory.Both)
             {
                 _slot[(int)_currentIndex + 1] = weapon;
             }

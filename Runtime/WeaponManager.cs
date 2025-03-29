@@ -37,21 +37,21 @@ namespace Weapon
             int mainId = 0, subId = 0;
 
             if (main)
-                mainId = main.GetWeaponID();
+                mainId = main.ID;
             if (sub)
-                subId = sub.GetWeaponID();
+                subId = sub.ID;
             text.text = $"{slot.GetCurrentSlotIndex()}\nSlot : Main : {mainId}\nSub : {subId}";
         }
 
         public void OnEquipMain()
         {
-            Debug.Log($"Equip main weapon {weapon.GetWeaponID()}");
+            Debug.Log($"Equip main weapon {weapon.ID}");
             slot.EquipMainWeapon(weapon);
         }
 
         public void OnEquipSub()
         {
-            Debug.Log($"Equip sub weapon {weapon.GetWeaponID()}");
+            Debug.Log($"Equip sub weapon {weapon.ID}");
             slot.EquipSubWeapon(weapon);
         }
 
@@ -59,21 +59,21 @@ namespace Weapon
         {
             var weapon = slot.UnequipMainWeapon();
             if (weapon)
-                Debug.Log($"Unequip main weapon {weapon.GetWeaponID()}");
+                Debug.Log($"Unequip main weapon {weapon.ID}");
         }
 
         public void OnUnequipSub()
         {
             var weapon = slot.UnequipSubWeapon();
             if (weapon)
-                Debug.Log($"Unequip main weapon {weapon.GetWeaponID()}");
+                Debug.Log($"Unequip main weapon {weapon.ID}");
         }
 
         public void OnGenerate()
         {
             int id = Random.Range(1, 4);
             Weapon weapon = CreateWeapon(id);
-            Debug.Log($"Generate weapon {weapon.GetWeaponID()}");
+            Debug.Log($"Generate weapon {weapon.ID}");
             
         }
         #endregion
@@ -86,7 +86,7 @@ namespace Weapon
             {
                 return null;
             }
-            GameObject newWeapon = Instantiate(data.GetWeaponPrefab(), parent);
+            GameObject newWeapon = Instantiate(data.Prefab, parent);
             Weapon weapon = newWeapon.GetComponent<Weapon>();
             if (weapon == null)
             {
