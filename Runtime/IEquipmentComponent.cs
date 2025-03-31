@@ -5,13 +5,7 @@ namespace Juhyeon.Weapon.System
         /// <summary>
         /// 세트를 변경합니다.
         /// </summary>
-        void SwapSet();
-
-        /// <summary>
-        /// 첫 번째 세트인지 두 번째 세트인지 알려줍니다.
-        /// </summary>
-        /// <returns>첫 번째 세트는 FirstSet, 두 번째 세트는 SecondSet이 반환됩니다.</returns>
-        ESetIndex GetCurrentSet();
+        void Swap();
 
         /// <summary>
         /// 무기를 지정한 카테고리에 맞추어 장착합니다.
@@ -20,7 +14,7 @@ namespace Juhyeon.Weapon.System
         /// <param name="weapon">장착할 무기를 지정합니다.</param>
         /// <param name="targetCategory">어느 카테고리에 장착할지 지정합니다.</param>
         /// <returns>원래 장착되어 있던 무기를 반환합니다. 장착되어 있지 않았다면 null을 반환합니다.</returns>
-        Weapon EquipWeapon(in Weapon weapon, in EWeaponCategory targetCategory);
+        Weapon Equip(in Weapon weapon, in EWeaponCategory targetCategory);
 
         /// <summary>
         /// 지정한 카테고리에 해당하는 무기를 장착 해제합니다.
@@ -28,7 +22,7 @@ namespace Juhyeon.Weapon.System
         /// </summary>
         /// <param name="targetCategory">어느 카테고리에 장착 해제할지 지정합니다.</param>
         /// <returns>원래 장착되어 있던 무기를 반환합니다. 장착되어 있지 않았다면 null을 반환합니다.</returns>
-        Weapon UnequipWeapon(in EWeaponCategory targetCategory);
+        Weapon Unequip(in EWeaponCategory targetCategory);
 
 
         /// <summary>
