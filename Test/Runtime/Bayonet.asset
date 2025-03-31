@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2aa7ed0dda275419efd6f5e8c1c287, type: 3}
+  m_Name: Bayonet
+  m_EditorClassIdentifier: 
+  _id: 1
+  _name: bayonet
+  _category: 0
+  _prop: 0
+  _rangeType: 0
+  _range: 1.2
+  _prefab: {fileID: 7716353152846250211, guid: 8bb0ac0e1b2104642bdf181eb2faf9b2, type: 3}

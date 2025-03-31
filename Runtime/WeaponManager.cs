@@ -66,7 +66,15 @@ namespace Juhyeon.Weapon.System
 
         public void OnGenerate()
         {
-            int id = Random.Range(1, 4);
+            int random = Random.Range(0, 4);
+            int id = 1;
+            switch (random)
+            {
+                case 0: id = 1; break;
+                case 1: id = 3; break;
+                case 2: id = 9; break;
+                case 3: id = 14; break;
+            }
             Weapon weapon = CreateWeapon(id);
             Debug.Log($"Generate weapon {weapon.Definition.ID}");
             
