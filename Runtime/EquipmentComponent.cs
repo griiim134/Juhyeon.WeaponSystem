@@ -15,7 +15,7 @@ namespace Juhyeon.Weapon.System
         public void Equip(in Weapon weapon, in EWeaponCategory targetCategory)
         {
             Debug.Assert(targetCategory != EWeaponCategory.Both, "wrong input(category) : EquipmentCaomponent.EquipWeapon");
-            if (weapon.Category == EWeaponCategory.Both || weapon.Category == targetCategory)
+            if (weapon.Definition.Category == EWeaponCategory.Both || weapon.Definition.Category == targetCategory)
             {
                 _slot[ChangeToIndex(targetCategory)] = weapon;
             }

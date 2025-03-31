@@ -36,21 +36,21 @@ namespace Juhyeon.Weapon.System
             int mainId = 0, subId = 0;
 
             if (main)
-                mainId = main.ID;
+                mainId = main.Definition.ID;
             if (sub)
-                subId = sub.ID;
+                subId = sub.Definition.ID;
             text.text = $"Main : {mainId}\nSub : {subId}";
         }
 
         public void OnEquipMain()
         {
-            Debug.Log($"Equip main weapon {weapon.ID}");
+            Debug.Log($"Equip main weapon {weapon.Definition.ID}");
             slot.Equip(weapon, EWeaponCategory.Main);
         }
 
         public void OnEquipSub()
         {
-            Debug.Log($"Equip sub weapon {weapon.ID}");
+            Debug.Log($"Equip sub weapon {weapon.Definition.ID}");
             slot.Equip(weapon, EWeaponCategory.Sub);
         }
 
@@ -68,7 +68,7 @@ namespace Juhyeon.Weapon.System
         {
             int id = Random.Range(1, 4);
             Weapon weapon = CreateWeapon(id);
-            Debug.Log($"Generate weapon {weapon.ID}");
+            Debug.Log($"Generate weapon {weapon.Definition.ID}");
             
         }
         #endregion
