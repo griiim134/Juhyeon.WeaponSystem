@@ -26,7 +26,7 @@ namespace Juhyeon.Weapon.System
         [SerializeField] private EWeaponCategory _category;
         [SerializeField] private EWeaponProp _prop;
         [SerializeField] private ERangeType _rangeType;
-        [SerializeField] private float _range;s
+        [SerializeField] private float _range;
         [SerializeField] private GameObject _prefab;
 
         public int ID => _id;
