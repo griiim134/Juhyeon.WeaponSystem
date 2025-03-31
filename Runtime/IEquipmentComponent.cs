@@ -31,6 +31,6 @@ namespace Juhyeon.Weapon.System
         /// </summary>
         /// <param name="targetCategory">어느 카테고리의 무기인지 지정합니다.</param>
         /// <returns>장착되어 있는 무기를 반환합니다. 장착되어 있지 않다면 null을 반환합니다.</returns>
-        Weapon HeldedWeapon(in EWeaponCategory targetCategory);
+        Weapon HasWeapon(in EWeaponCategory targetCategory);
     }
 }

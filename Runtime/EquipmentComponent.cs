@@ -12,7 +12,7 @@ namespace Juhyeon.Weapon.System
         private Weapon[] _slot = new Weapon[4];
         private ESetIndex _currentIndex = ESetIndex.FirstSet;
 
-        public Weapon EquipWeapon(in Weapon weapon, in EWeaponCategory targetCategory)
+        public Weapon Equip(in Weapon weapon, in EWeaponCategory targetCategory)
         {
             Debug.Assert(targetCategory != EWeaponCategory.Both, "wrong input(category) : EquipmentCaomponent.EquipWeapon");
             Weapon heldedWeapon = HeldedWeapon(targetCategory);
@@ -24,20 +24,18 @@ namespace Juhyeon.Weapon.System
             return null;
         }
 
-        public ESetIndex GetCurrentSet() => _currentIndex;
-
-        public Weapon HeldedWeapon(in EWeaponCategory targetCategory)
+        public Weapon HasWeapon(in EWeaponCategory targetCategory)
         {
             Debug.Assert(targetCategory != EWeaponCategory.Both, "wrong input(category) : EquipmentCaomponent.HeldedWeapon");
             return _slot[ChangeToIndex(targetCategory)];
         }
 
-        public void SwapSet()
+        public void Swap()
         {
             _currentIndex = (_currentIndex == ESetIndex.FirstSet ? ESetIndex.SecondSet : ESetIndex.FirstSet);
         }
 
-        public Weapon UnequipWeapon(in EWeaponCategory targetCategory)
+        public Weapon Unequip(in EWeaponCategory targetCategory)
         {
             Debug.Assert(targetCategory != EWeaponCategory.Both, "wrong input(category) : EquipmentCaomponent.UnequipWeapon");
             Weapon heldedWeapon = HeldedWeapon(targetCategory);
