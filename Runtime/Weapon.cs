@@ -5,9 +5,9 @@ namespace Juhyeon.Weapon.System
 
     public class Weapon : MonoBehaviour
     {
-        [SerializeField] private WeaponData _data;
+        [SerializeField] private WeaponDefinition _data = null;
 
-        public void SetData(in WeaponData data)
+        public void SetData(in WeaponDefinition data)
         {
             _data = data;
         }
@@ -19,5 +19,9 @@ namespace Juhyeon.Weapon.System
         public ERangeType RangeType => _data.RangeType;
         public float Range => _data.Range;
         public GameObject Prefab => _data.Prefab;
+
+        public bool IsValid => _data != null;
+        public bool IsDisabled => !IsValid;
+        public WeaponDefinition Definition => _data;
     }
 }

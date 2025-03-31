@@ -14,7 +14,7 @@ namespace Juhyeon.Weapon.System
         /// <param name="weapon">장착할 무기를 지정합니다.</param>
         /// <param name="targetCategory">어느 카테고리에 장착할지 지정합니다.</param>
         /// <returns>원래 장착되어 있던 무기를 반환합니다. 장착되어 있지 않았다면 null을 반환합니다.</returns>
-        Weapon Equip(in Weapon weapon, in EWeaponCategory targetCategory);
+        void Equip(in Weapon weapon, in EWeaponCategory targetCategory);
 
         /// <summary>
         /// 지정한 카테고리에 해당하는 무기를 장착 해제합니다.
@@ -22,7 +22,7 @@ namespace Juhyeon.Weapon.System
         /// </summary>
         /// <param name="targetCategory">어느 카테고리에 장착 해제할지 지정합니다.</param>
         /// <returns>원래 장착되어 있던 무기를 반환합니다. 장착되어 있지 않았다면 null을 반환합니다.</returns>
-        Weapon Unequip(in EWeaponCategory targetCategory);
+        void Unequip(in EWeaponCategory targetCategory);
 
 
         /// <summary>
