@@ -19,14 +19,14 @@ namespace Juhyeon.Weapon.System
     };
 
     [CreateAssetMenu(fileName = "WeaponData", menuName = "Scriptable Objects/WeaponData")]
-    public class WeaponData : ScriptableObject
+    public class WeaponDefinition : ScriptableObject
     {
         [SerializeField] private int _id;
         [SerializeField] private string _name;
         [SerializeField] private EWeaponCategory _category;
         [SerializeField] private EWeaponProp _prop;
         [SerializeField] private ERangeType _rangeType;
-        [SerializeField] private float _range;
+        [SerializeField] private float _range;s
         [SerializeField] private GameObject _prefab;
 
         public int ID => _id;
