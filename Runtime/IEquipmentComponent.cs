@@ -20,7 +20,7 @@ namespace Juhyeon.Weapon.System
         /// 이때, 카테고리는 Main과 Sub만 유효합니다.
         /// </summary>
         /// <param name="targetCategory">어느 카테고리에 장착 해제할지 지정합니다.</param>
-        void Unequip(in EWeaponCategory targetCategory);
+        void Unequip(in Weapon weapon, in EWeaponCategory targetCategory);
 
 
         /// <summary>

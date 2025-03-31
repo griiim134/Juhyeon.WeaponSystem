@@ -32,7 +32,7 @@ namespace Juhyeon.Weapon.System
             _currentIndex = (_currentIndex == ESetIndex.FirstSet ? ESetIndex.SecondSet : ESetIndex.FirstSet);
         }
 
-        public void Unequip(in EWeaponCategory targetCategory)
+        public void Unequip(in Weapon weapon, in EWeaponCategory targetCategory)
         {
             Debug.Assert(targetCategory != EWeaponCategory.Both, "wrong input(category) : EquipmentCaomponent.UnequipWeapon");
             _slot[ChangeToIndex(targetCategory)] = null;

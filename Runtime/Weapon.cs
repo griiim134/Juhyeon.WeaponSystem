@@ -21,7 +21,7 @@ namespace Juhyeon.Weapon.System
         public GameObject Prefab => _data.Prefab;
 
         public bool IsValid => _data != null;
-        public bool IsDisabled => !IsValid;
+        public bool IsNotValid => !IsValid;
         public WeaponDefinition Definition => _data;
     }
 }
