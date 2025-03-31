@@ -6,12 +6,12 @@ namespace Juhyeon.Weapon.System
     [CreateAssetMenu(fileName = "WeaponDB", menuName = "Scriptable Objects/WeaponDB")]
     public class WeaponDB : ScriptableObject
     {
-        public List<WeaponData> weapons;
-        private Dictionary<int, WeaponData> _db;
+        public List<WeaponDefinition> weapons;
+        private Dictionary<int, WeaponDefinition> _db;
 
         private void OnEnable()
         {
-            _db = new Dictionary<int, WeaponData>();
+            _db = new Dictionary<int, WeaponDefinition>();
             foreach(var weapon in weapons)
             {
                 if (_db.ContainsKey(weapon.ID))
@@ -23,7 +23,7 @@ namespace Juhyeon.Weapon.System
             }
         }
 
-        public WeaponData GetWeaponData(in int id)
+        public WeaponDefinition GetWeaponData(in int id)
         {
             if (_db.TryGetValue(id, out var weapon))
             {

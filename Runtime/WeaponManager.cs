@@ -25,47 +25,43 @@ namespace Juhyeon.Weapon.System
             subEquip.onClick.AddListener(OnEquipSub);
             mainUnequip.onClick.AddListener(OnUnequipMain);
             subUnequip.onClick.AddListener(OnUnequipSub);
-            swap.onClick.AddListener(slot.SwapSet);
+            swap.onClick.AddListener(slot.Swap);
             generate.onClick.AddListener(OnGenerate);
         }
 
         private void Update()
         {
-            var main = slot.HeldedWeapon(EWeaponCategory.Main);
-            var sub = slot.HeldedWeapon(EWeaponCategory.Sub);
+            var main = slot.HasWeapon(EWeaponCategory.Main);
+            var sub = slot.HasWeapon(EWeaponCategory.Sub);
             int mainId = 0, subId = 0;
 
             if (main)
                 mainId = main.ID;
             if (sub)
                 subId = sub.ID;
-            text.text = $"{(slot.GetCurrentSet() == ESetIndex.FirstSet ? 1 : 2)}\nSlot : Main : {mainId}\nSub : {subId}";
+            text.text = $"Main : {mainId}\nSub : {subId}";
         }
 
         public void OnEquipMain()
         {
             Debug.Log($"Equip main weapon {weapon.ID}");
-            slot.EquipWeapon(weapon, EWeaponCategory.Main);
+            slot.Equip(weapon, EWeaponCategory.Main);
         }
 
         public void OnEquipSub()
         {
             Debug.Log($"Equip sub weapon {weapon.ID}");
-            slot.EquipWeapon(weapon, EWeaponCategory.Sub);
+            slot.Equip(weapon, EWeaponCategory.Sub);
         }
 
         public void OnUnequipMain()
         {
-            var weapon = slot.UnequipWeapon(EWeaponCategory.Main);
-            if (weapon)
-                Debug.Log($"Unequip main weapon {weapon.ID}");
+            slot.Unequip(null, EWeaponCategory.Main);
         }
 
         public void OnUnequipSub()
         {
-            var weapon = slot.UnequipWeapon(EWeaponCategory.Sub);
-            if (weapon)
-                Debug.Log($"Unequip main weapon {weapon.ID}");
+            slot.Unequip(null, EWeaponCategory.Sub);
         }
 
         public void OnGenerate()
@@ -79,7 +75,7 @@ namespace Juhyeon.Weapon.System
 
         public Weapon CreateWeapon(int id, Transform parent = null)
         {
-            WeaponData data = DB.GetWeaponData(id);
+            WeaponDefinition data = DB.GetWeaponData(id);
 
             if (data == null)
             {
