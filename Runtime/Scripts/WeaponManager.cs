@@ -14,7 +14,6 @@ namespace Juhyeon.Weapon.System
         public Button subUnequip;
         public Button swap;
         public Button generate;
-        public Text text;
 
         public EquipmentComponent slot;
         public Weapon weapon;
@@ -26,21 +25,13 @@ namespace Juhyeon.Weapon.System
             subEquip.onClick.AddListener(OnEquipSub);
             mainUnequip.onClick.AddListener(OnUnequipMain);
             subUnequip.onClick.AddListener(OnUnequipSub);
-            swap.onClick.AddListener(slot.Swap);
+            swap.onClick.AddListener(OnSwap);
             generate.onClick.AddListener(OnGenerate);
         }
 
         private void Update()
         {
-            var main = slot.HasWeapon(EWeaponCategory.Main);
-            var sub = slot.HasWeapon(EWeaponCategory.Sub);
-            int mainId = 0, subId = 0;
-
-            if (main)
-                mainId = main.Definition.ID;
-            if (sub)
-                subId = sub.Definition.ID;
-            text.text = $"Main : {mainId}\nSub : {subId}";
+            ui.DrawSlotImage(slot.HasWeapon(EWeaponCategory.Main), slot.HasWeapon(EWeaponCategory.Sub));
         }
 
         public void OnEquipMain()
@@ -79,6 +70,11 @@ namespace Juhyeon.Weapon.System
             Weapon weapon = CreateWeapon(id);
             Debug.Log($"Generate weapon {weapon.Definition.ID}");
             
+        }
+
+        public void OnSwap()
+        {
+            slot.Swap();
         }
         #endregion
 

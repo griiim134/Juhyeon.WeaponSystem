@@ -18,4 +18,5 @@ MonoBehaviour:
   _prop: 0
   _rangeType: 0
   _range: 1.5
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 1898831488665846964, guid: 1238822347e896b43b3f296d7a7f2973, type: 3}
+  _icon: {fileID: 0}
