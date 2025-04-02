@@ -18,6 +18,7 @@ namespace Juhyeon.Weapon.System
 
         public EquipmentComponent slot;
         public Weapon weapon;
+        public EquipmentUIController ui;
 
         private void Start()
         {

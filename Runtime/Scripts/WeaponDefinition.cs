@@ -28,6 +28,7 @@ namespace Juhyeon.Weapon.System
         [SerializeField] private ERangeType _rangeType;
         [SerializeField] private float _range;
         [SerializeField] private GameObject _prefab;
+        [SerializeField] private Sprite _icon;
 
         public int ID => _id;
         public string Name => _name;
@@ -36,5 +37,6 @@ namespace Juhyeon.Weapon.System
         public ERangeType RangeType => _rangeType;
         public float Range => _range;
         public GameObject Prefab => _prefab;
+        public Sprite Icon => _icon;
     }
 }
